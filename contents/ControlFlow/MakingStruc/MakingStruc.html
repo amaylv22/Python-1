@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Decision making structures</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Decision making structures</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Decision making structures require that the programmer specify one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is determined to be true, and <b>optionally</b>, other statements to be executed in the opposite case.</p>
+			<p>Python assumes any <b>non-zero</b> and <b>non-null</b> values as <b>true</b>, and <b>false</b> otherwise.</p>
+			<p>Python provides the following types of decision making statements.</p>
+		</article>
+
+		<article class="subsection">
+			<h1>if statements</h1>
+			<p>An <em>if statement</em> consists of a Boolean expression fallowed by one or more statements that will be executed if the expression is determined to be true</p>
+			<pre><code>if EXPRESSION:
+	STATEMENT(s)</pre></code>
+			<p>Remember that in python the <em>whitespace is significant</em>, mining that in python the whitespace (tabs or spaces) does the work that curly braces ({}) does in other programming languages.</p>
+			
+		</article>
+		<article class="subsection">
+			<h1>if...else statements</h1>
+			<p>An <em>if statement</em> can be followed by an optional <em>else statement</em>, which executes when the boolean expression is false</p>
+			<p>There could be at most, only one <em>else</em> statement following <em>if</em></p>
+			<pre><code>if EXPRESSION:
+	STATEMENT(s)
+else:
+	STATEMENT(s)</pre></code>
+
+			<h2 id="">the elif statement</h2>
+			<p>The <em>elif</em> statement allows you to check multiple expressions for truth value, and execute a block of code as soon as one of the conditions values to true.</p>
+			<p>Like the <em>else</em>, the <em>elif</em> statement is optional. However, unlike else, there can be an arbitrary number of elif statements following if. The syntax of the if...elif statement is:</p>
+			<pre><code>if EXPRESSION_1:
+	STATEMENT(s)
+elif EXPRESSION_2:
+	STATEMENT(s)
+elif EXPRESSION_3:
+	STATEMENT(s)
+else:
+	STATEMENT(s)</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1>Loops</h1>
+			<p>A loop statement allows us to execute a statement or group of statements multiple times.</p>
+			<p>Python programming language provides two types of loops, <em>while loop</em> and <em>for loop</em></p>
+		</article>
+	</body>
+</html>	

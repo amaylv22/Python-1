@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Classes and objects</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Classes and objects</h1>
+		</header>
+		
+		<article class="subsection">		
+			<p>Python has been an object-oriented language from day one. Because of this, creating and using classes and objects are downright easy.</p>
+		</article>		
+
+		<article class="subsection">			
+			<h1>Creating classes</h1>
+			<p>By convention, user-defined Python class names start with a capital letter.</p>
+			<p> Ideally, you should define your classes in separate file then you should import them in your main program file using import statement.</p>
+			<p>The class statement creates a new class definition. The name of the class immediately follows the keyword class followed by a colon as follows:</p>
+			<pre><code>class Class_name(object):
+	'Optional class documentation string'
+ 	class_suite</pre></code>
+			<ul>
+				<li><p>The class has a documentation string which can be access via ClassName.__doc__.</p></li>
+				<li><p>The class_suite consists of all the component statements, defining class members, data attributes, and functions.</p></li>
+			</ul>
+			<p>Following is the example of a simple Python class:</p>
+			<pre><code>class Animal(object):
+	Common base class for all animals'
+	animalCount = 0
+
+	def __init__(self, name, family):
+		self.name = name
+		self.family = family
+		Animal.animalCount += 1
+   
+	def displayTotal(self):
+		print "Animal total %d" % Animal.animalCount
+
+	def displayanimal(self):
+		print "Name : ", self.name,  ", Family: ", self.family</pre></code>
+			
+			<ul>
+				<li><p>The variable animalCount is a <em>class variable or member variable</em> cause it is available to all members of a class, so its <em>value</em> would <em>be shared among all instances of a this class</em>. This <em>can be accessed</em> as Animal.animalCount <em>from inside</em> the class <em>or outside</em> the class.</p></li>
+				<li><p>The first method <em>__init__()</em> is a special method which is called <em>class constructor</em> or initialization method that Python calls when you create a new instance of this class.
+	The <em>__init__()</em> function <em>is required</em> for classes, and it's used <em>to initialize the objects</em> it creates. __init__() <em>always takes at least one argument</em>, <em>self</em>, that refers to the object being created. You can think of __init__() as the function that "boots up" each object the class creates.</p></li>
+				<li><p>You <em>declare other class methods</em> like <em>normal functions</em> with the exception that the <em>first argument to each method is self</em>. Python adds the self argument to the list for you; <em>you don't need to include it when you call</em> the methods.</p></li>
+			</ul>
+
+		</article>
+		
+	</body>
+</html>	

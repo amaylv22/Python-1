@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Loop control statements</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Loop control statements</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.</p>
+			<p>Python supports the following control statements.</p>
+		</article>
+		<article class="subsection">
+			<h1>Break statement</h1>
+			<p>Terminates the loop statement and transfers execution to the statement immediately following the loop.</p>
+			<p>The most common use for break is when some external condition is triggered requiring a hasty exit from a loop. The break statement <em>can be used in</em> both <em>while and for loops</em>.</p>
+			<p>The syntax for a break statement in Python is as follows:</p>
+			<pre><code>break</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1>Continue statement</h1>
+			<p>Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</p>
+			<p>The continue statement in Python returns the control to the beginning of the while loop. The continue statement rejects all the remaining statements in the current iteration of the loop and moves the control back to the top of the loop.</p>
+			<p>The continue statement <em>can be used in</em> both <em>while and for loops</em>.</p>
+			<p>The syntax for a continue statement in Python is as follows:</p>
+			<pre><code>continue</pre></code>
+		</article>
+		
+		<article class="subsection">
+			<h1>Pass statement</h1>
+			<p>Pass is a null operation, when it is executed, nothing happens. It is useful as a placeholder <em>when a statement is required syntactically</em>, but no code needs to be executed or you do not want any command or code to execute.</p>
+			<p>The pass is also useful in places where your code will eventually go, but has not been written yet (e.g., in stubs for example).</p>
+			<p>The syntax for a pass statement in Python is as follows:</p>
+			<pre><code>pass</pre></code>
+		</article>
+		
+	</body>
+</html>	

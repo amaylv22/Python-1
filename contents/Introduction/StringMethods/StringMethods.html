@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>String methods</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>String methods</h1>
+		</header>
+		
+		<article class="subsection">
+			<h1>Basic string methods</h1>
+			<h2 id="">Acces by ofset</h2>
+			
+			<p>Each character in a string has a <em>subscript</em> or <em>offset</em>, which is the value that represent its position in the character chain. Using this "adress" ones can get to each character in the string individually</p>
+			<p>The number starts at <em>0</em> for the leftmost character and increses by one as you move character-by-charcter to the right</p>
+			<p>Therefor to obtain the character in the n position inside string <em>var</em>:</p>
+			<pre><code>var[n]</pre></code>
+			<p>The method also could be used with explicit literal strings:</p>
+			<pre><code>"WORD"[2] &rarr; 'R'</pre></code>
+			
+			
+			<h2 id="">Length of a string &rarr; <em>len()</em></h2>
+			<p>Gets the length of a string, that is, the number of charcaters in the chain, returned as integer</p>
+			<pre><code>print len(var1)</pre></code>
+		
+			<h2 id="">Transform to lower case &rarr; <em>lower()</em></h2>
+			<p>Transform all characters in the string to its lower case representation</p>
+			<pre><code>print var1.lower()</pre></code>
+			
+			<h2 id="">Transform to upper case &rarr; <em>upper()</em></h2>
+			<p>Transform all characters in the string to its upper case representation</p>
+			<pre><code>print var1.upper()</pre></code>
+			
+			<h2 id="">Convert to string &rarr; <em>str()</em></h2>
+			<p>The str() method returns a string from whatever non-string data beteween the braces</p>
+			<pre><code>print str(var1)</pre></code>
+
+			<h2 id="">Alphabetical composition &rarr; <em>isalpha()</em></h2>
+			<p>The str() method returns True if the string is composed exclusively with alphabetical charactersa</p>
+			<pre><code>var1.isalpha()</pre></code>
+		
+			<h2 id="">Slicing strings &rarr; <em>[i:j]</em></h2>
+			<p>If it is necessary a slice of a string could be obtained telling the interpreter the range of characters ID the have to be preserved. I.e., you can get the "slice" of <em>s</em> from character <em>i</em> to one character before <em>j</em> using <em>s[i:j].</em></p>
+			<pre><code>new_sliced_string = string_var[i:j]</pre></code>
+			
+			<h2 id="">Separating the words of a string &rarr; <em>split()</em></h2>
+			<p>Return a list of the words of the string s. If the optional second argument sep is absent or None, the words are separated by arbitrary strings of whitespace characters (space, tab, newline, return, formfeed). If the second argument sep is present and not None, it specifies a string to be used as the word separator. The returned list will then have one more item than the number of non-overlapping occurrences of the separator in the string. If maxsplit is given, at most maxsplit number of splits occur, and the remainder of the string is returned as the final element of the list (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).</p>
+    <p>The behavior of split on an empty string depends on the value of sep. If sep is not specified, or specified as None, the result will be an empty list. If sep is specified as any string, the result will be a list containing one element which is an empty string.</p>
+			<pre><code>s.split(&lt;sep&lt;, maxsplit&gt;&gt;)</pre></code>
+
+			<h2 id="">Joining list of strings &rarr; <em>join()</em></h2>
+			<p>The method join() returns a string in which the string elements of sequence have been joined by str separator.</p>
+			<p>Following is the syntax for join() method</p>
+			<pre><code>str.join(sequence)</pre></code>
+			<p>Where sequence is a sequence of the elements to be joined.</p>
+
+			<li><a href="http://docs.python.org/release/2.5.2/lib/string-methods.html">String methods</a></li>
+			<li><a href="http://docs.python.org/2/library/stdtypes.html">String methods. Complete the tutorial</a></li>
+			<li><a href="http://docs.python.org/2/library/string.html">Strings</a></li>
+			<li><a href="http://www.tutorialspoint.com/python/python_strings.htm">A lot of strings methods and theory</a></li>
+			
+		</article>
+		
+	</body>
+</html>	

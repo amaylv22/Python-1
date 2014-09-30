@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Basic files I/O</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Basic files I/O</h1>
+		</header>
+		
+		<article class="subsection">
+			
+			<p>Python provides basic functions and methods necessary to manipulate files by default. You can do your most of the file manipulation using a file_object.</p>
+		</article>
+
+		<article class="subsection">
+			<h1>The open Function</h1>
+			
+			<p>Before you can read or write a file, you have to open it using Python's built-in open() function. This function creates a file object which would be utilized to call other support methods associated with it.</p>
+			<pre><code>file_obj = open("file_name" &lt;, "access_mode"&gt; &lt;, buffering&gt;)</pre></code>
+			<p>where:</p>
+			<dl>
+				<dt>file_name</dt>
+					<dd><p>a string value that contains the name of the file that you want to access</p></dd>
+				<dt>access_mode</dt>
+					<dd><p>string that determines the mode in which the file has to be opened ie. read, write append etc. A complete list of possible values is given below in the table. This is optional parameter and the default file access mode is read (r)</p></dd>
+				<dt>buffering</dt>
+					<dd><p>If the buffering value is set to 0, no buffering will take place. If the buffering value is 1, line buffering will be performed while accessing a file. If you specify the buffering value as an integer greater than 1, then buffering action will be performed with the indicated buffer size. If negative, the buffer size is the system default(default behavior)</p></dd>
+
+			<h2 id="">Access mode list</h2>
+			<p>Here is a list of the different modes of opening a file:</p>			
+			<table border="0" cellspacing="5" cellpadding="10px" style="text-align: left; margin-left: auto; margin-right: auto;">
+				<caption></caption>
+				<tbody>
+				<tr>
+					<td>r</td>
+					<td>Opens a file for <em>reading only</em>. The file <em>pointer</em> is placed<em>at the beginning</em> of the file. This is the default mode.</td>
+				</tr>
+				<tr>				
+					<td>rb</td>
+					<td>Opens a file for <em>reading only in binary format</em>. The file <em>pointer</em> is placed <em>at the beginning</em> of the file.</td>
+				</tr>
+				<tr>
+					<td>r+<td>
+					<td>Opens a file for both <em>reading and writing</em>. The file <em>pointer</em> will be <em>at the beginning</em> of the file.</td>
+				</tr>
+				<tr>
+					<td>rb+</td>
+					<td>Opens a file for both <em>reading and writing in binary format</em>. The file <em>pointer</em> will be <em>at the beginning</em> of the file.</td>
+				</tr>
+				<tr>
+					<td>w</td>
+					<td>Opens a file for <em>writing only</em>. <em>Overwrites</em> the file <em>if</em> the file <em>exists</em>. <em>If</em> the file does <em>not</em> exist, <em>creates</em> a new file for writing.</td>
+				</tr>
+				<tr>				
+					<td>wb</td>
+					<td>Opens a file for <em>writing only in binary format</em>. <em>Overwrites</em> the file <em>if</em> the file <em>exists</em>. <em>If</em> the file does <em>not</em> exist, <em>creates</em> a new file for writing.</td>
+				</tr>
+				<tr>
+					<td>w+</td>
+					<td>Opens a file for both <em>writing and reading</em>. <em>Overwrites</em> the existing file <em>if</em> the file <em>exists</em>. <em>If</em> the file does <em>not</em> exist, <em>creates</em> a new file for reading and writing.</td>
+				</tr>				
+				<tr>
+					<td>wb+</td>
+					<td>Opens a file for both <em>writing and reading in binary format</em>. <em>Overwrites</em> the existing file <em>if</em> the file <em>exists</em>. <em>If</em> the file does <em>not</em> exist, <em>creates</em> a new file for reading and writing.</td>
+				</tr>
+				<tr>
+					<td>a</td>
+					<td>Opens a file for <em>appending</em>. The file <em>pointer</em> is <em>at the end</em> of the file <em>if</em> the file <em>exists</em>. That is, the file is in the append mode. <em>If</em> the file does <em>not</em> exist, it <em>creates</em> a new file <em>for writing</em>.</td>
+				</tr>
+				<tr>				
+					<td>ab</td>
+					<td>Opens a file for <em>appending in binary format</em>. The file <em>pointer</em> is <em>at the end</em> of the file <em>if</em> the file <em>exists</em>. That is, the file is in the append mode. <em>If</em> the file does <em>not</em> exist, it <em>creates</em> a new file <em>for writing</em>.</td>
+				</tr>
+				<tr>
+					<td>a+</td>
+					<td>Opens a file for both <em>appending and reading</em>. The file <em>pointer</em> is <em>at the end</em> of the file <em>if</em> the file <em>exists</em>. The file opens in the append mode. <em>If</em> the file does <em>not</em> exist, it <em>creates</em> a new file <em>for reading and writing</em>.</td>
+				</tr>
+				<tr>
+					<td>ab+</td>
+					<td>Opens a file for both <em>appending and reading in binary format</em>. The file <em>pointer</em> is <em>at the end</em> of the file <em>if</em> the file <em>exists</em>. The file opens in the append mode. <em>If</em> the file does <em>not</em> exist, it <em>creates</em> a new file <em>for reading and writing</em>.</td>
+				</tr>
+			</tbody>
+		</table>
+		
+			<h2 id="">The file object <em>attributes</em></h2>
+			<p>Once a file is opened and you have one file object, you can get various information related to that file. Here is a list of all attributes related to file object:</p>
+			<dl>
+				<dt>file_obj.closed</dt>
+					<dd><p>Returns true if file is closed, false otherwise.</p></dd>
+				<dt>file_obj.mode</dt>
+					<dd><p>Returns access mode with which file was opened.</p></dd>
+				<dt>file_obj.name</dt>
+					<dd><p>Returns name of the file.</p></dd>
+				<dt>file_obj.softspace</dt>
+					<dd><p>Returns false if space explicitly required with print, true otherwise.</p></dd>
+			</dl>
+		</article>
+			
+		<article class="subsection">
+			<h1>The close() method</h1>
+			<p>The close() method of a file object flushes any unwritten information and closes the file object, after which no more writing can be done.</p>
+			<p>Python automatically closes a file when the reference object of a file is reassigned to another file. It is a good practice to use the close() method to close a file.</p>
+			<pre><code>file_obj.close()</pre></code>
+			<p>During the I/O process, data are buffered: this means that they're held in a temporary location before being written to the file. Python doesn't flush the buffer (that is, write data to the file) until it's sure you're done writing, and one way to do this is to close the file. If you write to a file without closing, the data won't make it to the target file.</p>
+
+			<h2 id="">Closing files implicitly</h2>
+			<p>There's a way to close the files automatically in Python. File objects contain a special pair of built-in methods: __enter__() and __exit__(), when a file object's __exit__() method is invoked, it automatically closes the file.</p>
+			<p>To invoke this last method we use the <em>with</em> and <em>as</em> commands</p>
+			<p>The syntax looks like this:</p>
+			<pre><code>with open("file_name", "mode") as var_name:&nbsp;&nbsp;#read or write statement</pre></code>
+		</article>
+			
+		<article class="subsection">
+			<h1>Reading and Writing Files</h1>
+			
+			<p>The file object provides a set of access methods to make our lives easier. We would see how to use read() and write() methods to read and write files.</p>
+		
+			<h2 id="">The write() method</h2>
+			<p>The write() method writes any string to an open file. It is important to note that Python strings can have binary data and not just text.</p>
+			<p>The write() method does not add a newline character ('\n') by default to the end of the string. It your responsibility to add it, if it is needed.</p>
+			<p>The syntax looks like:</p>
+			<pre><code>file_obj.write(string)</pre></code>
+			
+			<h2>The read() method</h2>
+			<p>The read() method read a string from an open file. It is important to note that Python strings can have binary data and not just text.</p>
+			<pre><code>file_obj.read(&lt;count&gt;)</pre></code>
+			<p>Here passed <em>parameter</em> is the <em>number of bytes to be read</em> from the opened file. This method <em>starts</em> reading <em>from the beginning of the file</em> and <em>if count is missing</em> then it <em>tries to read as much as possible</em>, may be until the end of file.</p>
+			
+			<h2 id="">The readline() method</h2>
+			<p>if what we need is to read from a file line by line directly, the readline() method is the choice.</p>
+			<p>If you open a file and call readline() on the file object, you'll get the first line of the file; subsequent calls to readline() will return successive lines.</p>
+			<pre><code>file_obj.readline()</pre></code>
+		</article>
+				
+		<article class="subsection">
+			<h1>File object related methods</h1>
+			
+			<p>The file object provides functions to manipulate files. And all the functions have similar syntax:</p>
+			<pre><code>file_obj.method_name(...)</pre></code>
+			
+		</article>
+		
+	</body>
+</html>	

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Basic operators</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Basic operators</h1>
+		</header>
+		
+		<article class="subsection">
+			<h1>Arithmetic operator</h1>
+
+			<p>There are six principal arithmetic operator in python, these are:</p>
+
+			<ol>
+				<li>Addition &rarr; (+)</li>
+				<li>Subtraction &rarr; (-)</li>
+				<li>Multiplication &rarr; (*)</li>
+				<li>Division &rarr; (/)</li>
+				<li>Exponentiation &rarr; (**)</li>
+				<li>Modulo &rarr; (%)</li>
+			</ol>
+		</article>
+
+		<article class="subsection">
+			<h1>Comparators</h1>
+			
+			<p>There are six different comparators, each one generates a True or False result once been evaluated:</p>
+			<ol>
+				<li>Equal to (<em>==</em>)</li>
+				<li>Not equal to (<em>!=</em>)</li>
+				<li>Less than or  (<em><</em>)</li>
+				<li>Less than or equal to (<em><=</em>)</li>
+				<li>Greater than (<em>></em>)</li>
+				<li>Greater than or equal to (<em>>=</em>)</li>
+			</ol>
+		</article>
+
+		<article class="subsection">
+		<h1>Logical operators</h1>
+
+		<p>Also known as boolean operators, there are three of them and they are used to obtain True or False results based on the conventional true tables of conjunction (&), disjunction (|) and negation (~).</p>
+			<ol>
+				<li>And (<em>and</em>)</li>
+				<li>Or (<em>or</em>)</li>
+				<li>Not  (<em>not</em>)</li>
+			</ol>
+		<h2 id="">Order of operation for logic operators</h2>
+		<p>The order to evaluate the logical operator is at first <em>not</em>, next <em>and</em>, finally <em>or</em>.</p>
+			<p>This order can be changed by including parentheses.</p>
+		</article>
+
+		<article class="subsection">
+		<h1>Bitwise operators</h1>
+
+		<p>Bitwise operations are operations that directly manipulate bits. And its syntaxis is:</p>
+		<pre><code>element_1 <b>operator</b> elemnt_2</pre></code>
+			<p>for all of them, exept for the <em>not</em> operator that is:</p>
+		<pre><code><em>operator</em> element</pre></code>
+			<p>The six baisc bitwise operators are:</p>
+			
+			<dl>
+				<dt>Right shift (<em>&gt;&gt;</em>)</dt>
+					<dd>This operator work by shifting the bits to the right by a designated number of slots. It is mathematically equivalent to floor dividing by 2, e.g.: <br>
+					<pre><code>0b0010100 &gt;&gt; 3 = 0b000010 (20 &gt;&gt; 3 = 2) <br>
+0b0000010 &gt;&gt; 2 = 0b000000 (2 &gt;&gt; 2 = 0)</pre></code>
+					</dd>
+				<dt>Left shift (<em>&lt;&lt;</em>)</dt>
+					<dd>This operator work by shifting the bits to the left by a designated number of slots. It is mathematically equivalent to multiplying by 2, e.g.: <br>
+					<pre><code>0b000001 &lt;&lt; 2 = 0b000100 (1 &lt;&lt; 2 = 4) <br>
+0b000101 &lt;&lt; 3 = 0b101000 (5 &lt;&lt; 3 = 40)</pre></code>
+					</dd>
+				<dt>Bitwise AND (<em>&</em>)</dt>
+					<dd>Performs the bit-by-bit conjunction operation, and return the resultant number</dd>
+				<dt>Bitwise OR (<em>|</em>)</dt>
+					<dd>Performs the bit-by-bit disjunction operation, and return the resultant number</dd>
+				<dt>Bitwise XOR (<em>^</em>)</dt>
+					<dd>Performs the exclusive or operation (1 is either of the two incoming bits are 1 but noth both) on a bit level, and returns the result</dd>
+				<dt>Bitwise NOT (<em>~</em>)</dt>
+					<dd>The bitwise NOT operator just flips all of the bits in a single number.</dd>
+			</dl>
+
+			<article class="note"> To print a decimal number in its binary representation use the <em>bin()</em> function.
+		You can also represent numbers in base 8 and base 16 using the <em>oct()</em> and <em>hex()</em> functions.</p>
+		Aditionaly, using the second parameter of the <em>int()</em> function, you can specify the base of the number that you're trying to convert into an integer:
+			<pre><code>int("1010",2) -> 10</pre></code></article>
+		</article>
+		
+	</body>
+</html>	

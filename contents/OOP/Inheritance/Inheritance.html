@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Inheritance</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Inheritance</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>sometimes you want one class of objects to have the powers an abilities (that is, attributes and methods) of another class. Instead of starting from scratch, you can create a class by deriving it from a preexisting class by listing the parent class in parentheses after the new class name.</p>
+			<p>The <em>child</em> class <em>inherits</em> the <em>attributes and methods</em> of its parent class, and <em>you can use those attributes and methods as if they were defined in the child class</em>. A child class can also override data members and methods from the parent.</p>
+			<p>Derived classes are declared much like their parent class; however, a list of base classes to inherit from are given after the class name:</p>
+			<pre><code>class SubClassName (ParentClass1&lt;, ParentClass2, ...&gt;):
+	'Optional class documentation string'
+	class_suite</pre></code>
+			
+			<p>You can use <em>issubclass()</em> or <em>isinstance()</em> functions to <em>check a relationships of two classes</em> and instances:</p>
+
+    	<dl>
+    		<dt>issubclass(sub, sup)</dt>
+    			<dd><p>returns true if the given subclass <em>sub</em> is indeed a subclass of the superclass <em>sup</em>.</p></dd>
+    		<dt>isinstance(obj, Class)</dt>
+    			<dd>returns true if <em>obj</em> is an instance of class <em>Class</em> or is an instance of a subclass of Class</dd>
+    	</dl>
+
+			<h2 id="">Overriding methods</h2>
+			<p>Sometimes you'll want one class that inherits from another to not only take on the methods and attributes of its parent, but to override one or more of them.</p>
+			<p>You can always override your parent class methods. One reason for overriding parent's methods is because you may want special or different functionality of the same method in your subclass.</p>
+			<p>To overwrite a method only rewrite the method in the subclass, and python will take the last generation definition to run the method when it's called from a subclass instanced object</p>
+			
+			<h2 id="">Using original overriding methods</h2>
+			<p>Sometimes you'll be working with a derived class (or <em>subclass</em>) and realize that you've overwritten a method or attribute defined in that base class (also called a <em>parent</em> or <em>superclass</em>) that you actually need. When this happens, you can directly <em>access the attributes or methods of a superclass</em> with Python's<em> built-in super call</em>.</p>
+
+			<p>The syntax looks like this:</p>
+			
+			<pre><code>class DerivedClass(Base):
+	def some_method(self):
+		super(DerivedClass, self).meth()
+			</pre></code>
+			
+			<p>Where meth() is a method from the base class.</p>
+		</article>
+		
+	</body>
+</html>	

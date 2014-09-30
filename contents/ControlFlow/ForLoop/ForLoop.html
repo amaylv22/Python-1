@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>For loop</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>For loop</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>The <em>for loop</em> in Python has the ability to <em>iterate over the items of any sequence</em>, such as a list or a string.</p>
+			<p>The syntax of a for loop in Python programming language is:</p>
+			<pre><code>for iterating_var in sequence:
+	statement(s)</pre></code>
+			<p>If a sequence contains an expression list, it is evaluated first. Then, the first item in the sequence is assigned to the iterating variable iterating_var. Next, the statements block is executed. <em>Each item in the list is assigned to iterating_var</em>, and the statements(s) block is executed <em>until the entire sequence is exhausted</em>.</p>
+			
+			<h2 id="">creating sequences using <em>range()</em>:</h2>
+			<p>range() is a python built in function that automatically creates sequence depending of the number of arguments it receives:</p>
+			<dl>
+				<dt>range(n)</dt>
+					<dd><p>generate a list of n values, from 0 to (n-1), i.e., [0, 1, 2, ..., n-1]</p></dd>
+				<dt>range(i,n)</dt>
+					<dd><p>generate a list of (n-i) elements, from i to (n-1)</p></dd>
+				<dt>range(i,n,di)</dt>
+					<dd><p>generate a list of 1 + (n -1 -i)/di elements, from i  to (n-1) in increments of di units</p></dd>
+			</dl>
+			<p>To use a range generated sequence in a for loop is only necessary to:</p>
+			<pre><code>for iterating_var in range(...):
+	statement(s)</pre></code>
+			
+			<h2 id="">creating sequences using <em>enumerate()</em>:</h2>
+			<p>Enumerate(), will make certain loops a bit clearer. enumerate(thing), where thing is either an iterator or a sequence, <em>returns a iterator that will return</em> (0, thing[0]), (1, thing[1]), (2, thing[2]), and so forth.</p>
+			<p>A common idiom to change every element of a list looks like this:</p>
+			<pre><code>for i in range(len(L)):
+	item = L[i]
+	# ... compute some result based on item ...
+	L[i] = result</pre></code>
+			<p>This can be rewritten using enumerate() as:</p>
+			<pre><code>for i, item in enumerate(L):
+	# ... compute some result based on item ...
+	L[i] = result</pre></code>
+			
+			<h2 id="">iterating by sequence index:</h2>
+			<p>An alternative way of <em>iterating</em> through <em>each item</em> is <em>by index</em> offset into the sequence itself. Generate a <em>sequence</em> using <em>range with the len of</em> the item <em>container</em>:</p>
+			<pre><code>for iterating_var in range(len(list)):
+	statement(s)</pre></code>
+			
+			<h2 id="">iterate over multiple list:</h2>
+			<p>It's also common to need to iterate over two lists at once. This is where the built-in zip() function comes in handy. Zip() will create pairs of elements when passed two lists, and will stop at the end of the shorter list.</p>
+			<p>Zip <em>can handle as many lists as being needed</em>. Zip take as parameters a set of lists, and take the ith element of every list, and join them onto a tuple, and later join all the tuples in a new list.</p>
+			<pre><code>list1 = [...]
+list2 = [...]
+list3 = [...]
+new_tuple_list = zip( list1, list2, list3)</pre></code>
+			<p>Zip could be used with the for loop to iterate over multiple list at the same time</p>
+			<pre><code>for a, b in zip(list_a, list_b):
+	statement(s) using a and b</pre></code>
+			<p>If the lists are conform by different number of elements, zip will take the fewest one to create the new list of tuples.</p>
+			
+			<h2 id="">inline for to create sequences:</h2>
+			<p>A special form of the for loop could be used to generate sequences as lists. The syntax of an inline for is:</p>
+			<pre><code>new_list = [f(i) for i in range(n)]</pre></code>
+			<p>where f(i) could be any operations chain desired applied on i.</p>	
+		</article>
+		
+	</body>
+</html>	

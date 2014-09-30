@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lists</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Lists</h1>
+		</header>
+		
+		<article class="subsection">
+			<p>The most basic data structure in Python is the <em>sequence</em>. Each element of a sequence is assigned a number (its position, or index). The <em>first index is zero</em>, the second index is one, and so forth. Python has six built-in types of sequences, but the most common ones are lists and tuples.</p>
+			<p><em>Lists</em> are a datatype you can use to <em>store a collection of different pieces of information</em> as a sequence under a single variable name. </p>
+			<p>The list is a most versatile datatype available in Python, which can be <em>written as</em> a list of <em>comma-separated values (items) between square brackets ([]) and ending with a semicolon</em>.</p>
+			<pre><code>var_list = [val1, val2, ..., valn];</pre></code>
+			
+			<p>Not all items in a list need  to have the same type, e.g.:</p>
+			<pre><code>list1 = ['physics', 'chemistry', 1997, 2000];</pre></code>
+		
+			<h2 id="">Creating empty list</h2>
+			<p>Empty list could be created to be use in the future, the syntax is:</p>
+			<pre><code>new_list_name = []</pre></code>		
+			<h2 id="">Creating list using <em>range</em></h2>
+			<p>Creating list of a sequence of numbers using <em>range</em> is as simple as:</p>
+			<pre><code>my_list = range(51)</pre></code> And you can use all the functionality of the <b>range</b> command.
+			<h2 id="">Creating list using list comprehension</h2>
+			<p> List comprehensions are a powerful way to generate lists using the for/in and if keywords we've learned. For example when we want to crate a list with some logic, as a list of all the even numbers from 0 to 50</p>
+			<pre><code>evens_to_50 = [i for i in range(51) if i % 2 == 0]</pre></code>
+			<p>Or the map of some function for certain values:</p>
+			<pre><code>new_list = [f(i) for i in range(n)]</pre></code>		
+			<h2 id="">Creating a list by copying another</h2>
+			<p>To create a copy of a list and assign it to a new one, breaking the link for prevent undesired changes you have to:</p>
+			<pre><code>new_lst = original_lst[:]</pre></code>
+			<p>Otherwise when you make any change in the original_lst it will be reflected in the new_list because they share direction in memory</p>
+		</article>
+			
+		<article class="subsection">
+			<h1>Accessing Values in Lists</h1>
+			<p>You can access an individual item on the list by its index. An index is like an address that identifies the item's place in the list. To access values in lists, use the square brackets for slicing along with the index or indices to obtain value available at that index, e.g.:</p>
+			<pre><code>#obtaining the first item of list ListA
+print ListA[0]</pre></code>
+		</article>
+			
+		<article class="subsection">
+			<h1>Built-in List Functions & Methods</h1>
+			<p>Python includes following list functions:</p>
+			<dl>
+				<dt>len(list)</dt>
+					<dd><p>gives the number of items stored in the list</p></dd>
+				<dt>max(list)</dt>
+					<dd><p>returns item from the list with max value</p></dd>
+				<dt>min(list)</dt>
+					<dd><p>returns item from the list with min value</p></dd>
+				<dt>cmp(list1, list2)</dt>
+					<dd><p>compares elements of both lists</p></dd>
+				<dt>list(seq)</dt>
+					<dd><p>converts a tuple into list</p></dd>
+			</dl>
+			
+			<p>Python includes following list methods</p>
+			<dl>
+				<dt>list.count(obj)</dt>
+					<dd><p>returns count of how many times obj occurs in list</p></dd>
+				<dt>list.index(obj)</dt>
+					<dd><p>returns the lowest index in list that obj appears. An error will occur if there is no such item.</p></dd>
+
+				<dt>list.append(obj)</dt>
+					<dd><p>appends object obj to list</p></dd>
+				<dt>list.insert(index, obj)</dt>
+					<dd><p>inserts object obj into list at offset index</p></dd>
+
+				<dt>list.extend(seq)</dt>
+					<dd><p>appends the contents of seq to list</p></dd>
+
+				<dt>list.remove(obj)</dt>
+					<dd><p>removes the first object obj from the list</p></dd>
+				<dt>list.pop(index = -1)</dt>
+					<dd><p>removes the item at index from the list and return it to you</p></dd>
+				<dt>del(list[idx])</dt>
+					<dd><p>removes the element living on idx position as .pop, but it won't return it</p></dd>
+
+				<dt>list.reverse()</dt>
+					<dd><p>reverses objects of list in place</p></dd>
+				<dt>list.sort(&lt;func&gt;)</dt>
+					<dd><p>sorts objects of list (optionally using function func to sort)</p></dd>
+					
+				<dt>Concatenation (+)</dt>
+					<dd><p>[1,2,3] + [4,5,6] will produce [1,2,3,4,5,6]</p></dd>
+				<dt>Repetition (*)</dt>
+					<dd><p>["Hi"]*4 will produce ["Hi","Hi","Hi","Hi"]</p></dd>
+				<dt>Slice list_name[i:j]</dt>
+					<dd><p>obtains the portion of list_name starting with the index i and ending <em>before</em> the index j. If your list slice includes the <em>very first or last item</em> in a list (or a string), the <em>index for that</em> item <em>doesn't have to be included</em>, it is:</p>
+					<pre><code>#slicing a list taking from the first to the n'th element
+list_name[:n]
+
+#slicing a list form the n'th to the last element
+list_name[n:]</pre></code></dd>
+				<dt>Slice with stride list_name[i:j:k]</dt>
+					<dd><p>obtains the portion of list_name starting with the index i (inclusive), ending on j index (exclusive), and considering <em>k</em> spaces between items in the sliced list.</p>
+					<h3>Omitting indices</h3>
+					<p>If you don't pass a particular index to the list slice, Python will pick a default. The default for the starting index is the first element of the list; the default for the ending index is the final element of the list; and the default for the stride index is 1.</p></dd>
+			</dl>
+				
+		</article>
+		
+	</body>
+</html>	
