@@ -61,6 +61,79 @@
 			</ul>
 
 		</article>
-		
+
+		<article class="subsection">
+			<h1>Creating instance objects</h1>
+			<p>To create instances of a class, you call the class using class name and pass in whatever arguments its __init__ method accepts.</p>
+			<pre><code>new_obj = Class_name(init_arg_1, init_arg_2, ..., init_arg_n)</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1>Accessing attributes</h1>
+			<p>An attribute is a object variable that holds data associated with the object. And it's a component of the object.</p>
+			<p>You <em>access the object's attributes</em> using the <em>dot operator</em> with object.</p>
+			<pre><code>new_obj.attribute_name</pre></code>
+			<p>Instead of using the normal statements to access attributes, you can use following functions:</p>
+     			<dl>
+    				<dt>getattr(obj, name[, default])</dt>
+    					<dd><p>to access the attribute of object.</p></dd>
+    				<dt>hasattr(obj,name)</dt>
+    					<dd><p>to check if an attribute exists or not.</p></dd>
+    				<dt>setattr(obj,name,value)</dt>
+    					<dd><p>to set an attribute. <em>If</em> attribute <em>does not exist</em> then it would be <em>created</em>.</p></dd>
+    				<dt>delattr(obj, name)</dt>
+    					<dd><p>to delete an attribute.</p></dd>
+    			</dl>
+
+			<h2>Built-in class attributes</h2>
+			<p>Every Python class keeps following built-in attributes and they can be accessed using dot operator like any other attribute:</p>
+
+    			<dl>
+    				<dt>__dict__</dt>
+  	  				<dd><p>Dictionary containing the class's namespace.</p></dd>
+ 		   		<dt>__doc__</dt>
+  	  				<dd><p>Class documentation string, or None if undefined.</p></dd>
+ 		   		<dt>__name__</dt>
+ 		   			<dd><p>Class name.</p></dd>
+  	  			<dt>__module__</dt>
+  	  				<dd><p>Module name in which the class is defined. This attribute is "__main__" in interactive mode.</p></dd>
+  	  			<dt>__bases__</dt>
+  	  				<dd><p>A possibly empty tuple containing the base classes, in the order of their occurrence in the base class list.</p></dd>
+  	  			<dt>__repr__</dt>
+  	  				<dd><p>returns a representation of the object stored data. Providing a return value by overriding this method we can tell Python how to represent an object of our class (for instance, when using a print statement).</p></dd>
+  	  </dl>
+		</article>
+
+		<article class="subsection">
+			<h1>Calling methods</h1>
+			<p>A method is a functions of an object. You <em>call the class methods</em> using the <em>dot operator</em> with object.</p>
+			<pre><code>new_obj.method_name(...)</pre></code>
+		</article>
+
+		<article class="subsection">
+			<h1>Destroying objects</h1>
+			<p>Python deletes unneeded objects (built-in types or class instances) automatically to free memory space. The process by which Python periodically reclaims blocks of memory that no longer are in use is termed <em>garbage collection</em>.</p>
+
+			<p>Python's garbage collector runs during program execution and is triggered when an object's reference count reaches zero. An object's reference count changes as the number of aliases that point to it changes:</p>
+
+			<p>An object's reference count increases when it's assigned a new name or placed in a container (list, tuple, or dictionary). The object's reference count decreases when it's <em>deleted with del</em>, its reference is reassigned, or its reference goes out of scope. When an object's reference count reaches zero, Python collects it automatically.</p>
+
+			<p>You normally won't notice when the garbage collector destroys an orphaned instance and reclaims its space. But a class <em>can implement the special method __del__()</em>, called a destructor, that is invoked when the instance is about to be destroyed. This method might be used to clean up any nonmemory resources used by an instance.</p>
+		</article>
+
+		<article class="subsection">
+			<h1>Data hiding</h1>
+			<p>An <em>object's attributes</em> may or <em>may not be visible outside the class</em> definition. For these cases, you can <em>name attributes with a double underscore prefix</em>, <em>and</em> those attributes <em>will not be directly visible</em> to outsiders. E.g.:</p>
+			<pre><code>class JustCounter:
+	__secretCount = 0
+
+	def count(self):
+		#functions suite</pre></code>
+			
+			<p>Python protects those members by internally changing the name to include the class name. You can access such attributes as:</p>
+			<pre><code>print object._className__attrName</pre></code>
+
+		</article>
 	</body>
-</html>	
+</html>
+

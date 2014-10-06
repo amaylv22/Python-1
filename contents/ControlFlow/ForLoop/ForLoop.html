@@ -20,6 +20,12 @@
 		<header>
 			<h1>For loop</h1>
 		</header>
+
+		<article class="subsection">
+			<h1>Loops</h1>
+			<p>A loop statement allows us to execute a statement or group of statements multiple times.</p>
+			
+		</article>
 		
 		<article class="subsection">
 			<p>The <em>for loop</em> in Python has the ability to <em>iterate over the items of any sequence</em>, such as a list or a string.</p>
@@ -75,6 +81,22 @@ new_tuple_list = zip( list1, list2, list3)</pre></code>
 			<p>A special form of the for loop could be used to generate sequences as lists. The syntax of an inline for is:</p>
 			<pre><code>new_list = [f(i) for i in range(n)]</pre></code>
 			<p>where f(i) could be any operations chain desired applied on i.</p>	
+		</article>
+
+		<article class="subsection">
+			<h1>The else statement used with loops</h1>
+			<p>Python supports to have an else statement associated with a loop statements.</p>
+
+			<ul>
+    				<li>If the <em>else statement</em> is <em>used with a for loop</em>, the <em>else</em> statement <em>is executed when</em> the loop has <em>exhausted iterating the list</em>. If the loop exits as the result of a break, the else will not be executed.</li>
+			</ul>
+
+			<p>The following example illustrates the combination of an else statement with a for statement.</p>
+			
+			<pre><code>for iterating_var in sequence:
+	statement(s)
+else:
+	statement(s)</pre></code>
 		</article>
 		
 	</body>
